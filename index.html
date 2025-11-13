@@ -14,8 +14,23 @@
       margin: 0;
       padding: 0 20px;
     }
-    img {
-      display: block;
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+    .flags img {
+      width: 28px;
+      height: 20px;
+      margin-left: 10px;
+      cursor: pointer;
+      border: 1px solid #333;
+      border-radius: 3px;
+    }
+    img.logo {
+      width: 100px;
+      margin: 30px auto;
     }
     h1 {
       font-size: 2.4rem;
@@ -33,6 +48,38 @@
       font-size: 1.1rem;
       color: #d8d8d8;
     }
+    a {
+      color: #00d0ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .buttons {
+      margin-top: 40px;
+    }
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background: linear-gradient(90deg, #00d0ff, #0066ff);
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+    .btn:hover {
+      opacity: 0.85;
+    }
+    .social {
+      margin-top: 20px;
+    }
+    .social a {
+      margin: 0 10px;
+      color: #00d0ff;
+      font-size: 1.2rem;
+    }
     footer {
       margin-top: 50px;
       font-size: 0.9rem;
@@ -42,53 +89,96 @@
   </style>
 </head>
 <body>
-  <img src="new drex.png" alt="Logo DREX_BR">
+  <header>
+    <div></div>
+    <div class="flags">
+      <img src="https://flagcdn.com/w20/br.png" alt="Português" onclick="setLang('pt')">
+      <img src="https://flagcdn.com/w20/us.png" alt="English" onclick="setLang('en')">
+    </div>
+  </header>
 
-  <h1>DREX_BR — A Nova Geração da Moeda Digital Brasileira</h1>
+  <img src="drexbr.svg" alt="Logo DREX_BR" class="logo">
 
-  <p>
-    O Drex foi uma ideia revolucionária do Banco Central: uma tentativa de aproximar o Brasil da era das moedas digitais, 
-    trazendo inovação e conectividade para o sistema financeiro. No entanto, como toda iniciativa estatal, ele nasceu 
+  <h1 id="title">DREX_BR — A Nova Geração da Moeda Digital Brasileira</h1>
+
+  <p id="p1">
+    O Drex foi uma ideia revolucionária do Banco Central: uma tentativa de aproximar o Brasil da era das moedas digitais,
+    trazendo inovação e conectividade para o sistema financeiro. No entanto, como toda iniciativa estatal, ele nasceu
     limitado por controles, regulamentações e dependência de instituições tradicionais.
   </p>
 
-  <p>
-    O <strong>DREX_BR</strong> resgata essa visão — mas agora da forma como uma criptomoeda deve ser: 
-    <strong>livre, descentralizada e acessível a todos</strong>.  
-    Baseado na proposta original do Drex, o DREX_BR não pertence a nenhum governo ou banco. Ele é da comunidade, 
+  <p id="p2">
+    O <strong>DREX_BR</strong> resgata essa visão — mas agora da forma como uma criptomoeda deve ser:
+    <strong>livre, descentralizada e acessível a todos</strong>.
+    Baseado na proposta original do Drex, o DREX_BR não pertence a nenhum governo ou banco. Ele é da comunidade,
     criado para representar a independência financeira e a valorização real da confiança digital.
   </p>
 
-  <h2>Oferta Limitada e Crescimento Orgânico</h2>
+  <h2 id="h2a">Oferta Limitada e Crescimento Orgânico</h2>
 
-  <p>
-    O total de unidades é limitado a <strong>1 bilhão de DREX_BR</strong> — e nunca haverá emissão adicional.  
-    Até a metade das unidades ser vendida, o preço permanecerá abaixo de <strong>R$ 1,00</strong>, 
-    incentivando a entrada de novos participantes e apoiadores do projeto.
+  <p id="p3">
+    O total de unidades é limitado a <strong>1.000.000 DREX_BR</strong> — e nunca haverá emissão adicional.
+    A valorização é natural e baseada na própria dinâmica de mercado: quanto mais escassa e procurada a moeda, maior seu valor.
   </p>
 
-  <p>
-    À medida que a oferta diminui e a inflação corrói o poder de compra do Real, 
-    o valor do DREX_BR tende naturalmente a subir.  
-    Isso cria um modelo justo, transparente e com base na própria lógica do mercado: 
-    quanto mais escassa e procurada a moeda, maior seu valor.
+  <h2 id="h2b">Por que o DREX_BR?</h2>
+
+  <p id="p4">
+    Muitos acreditam que o Drex, idealizado pelo Banco Central, não deveria ter sido deixado de lado.
+    O DREX_BR surge exatamente dessa convicção — de que o Brasil merece uma moeda digital de verdade,
+    sem amarras burocráticas, sem intermediários e sem controle centralizado.
   </p>
 
-  <h2>Por que o DREX_BR?</h2>
-
-  <p>
-    Muitos acreditam que o Drex, idealizado pelo Banco Central, não deveria ter sido deixado de lado.  
-    O DREX_BR surge exatamente dessa convicção — de que o Brasil merece uma moeda digital de verdade, 
-    sem amarras burocráticas, sem intermediários, e sem o controle centralizado que limita a liberdade financeira.
-  </p>
-
-  <p>
-    Essa é a oportunidade de reviver o conceito do Drex em sua forma mais pura: 
+  <p id="p5">
+    Essa é a oportunidade de reviver o conceito do Drex em sua forma mais pura:
     uma moeda digital soberana nas mãos do povo, transparente, justa e preparada para o futuro.
   </p>
 
+  <div class="buttons">
+    <a href="https://pancakeswap.finance/swap?outputCurrency=0xe2e22a0a7Dd81C6E8E6f253BBbc3180697d018d4" class="btn" target="_blank">💱 Buy on PancakeSwap</a>
+    <a href="https://bscscan.com/token/0xe2e22a0a7Dd81C6E8E6f253BBbc3180697d018d4" class="btn" target="_blank">🔗 View on BscScan</a>
+    <a href="https://www.bcb.gov.br/estabilidadefinanceira/drex" class="btn" target="_blank">🏦 DREX Original (Banco Central)</a>
+  </div>
+
+  <div class="social">
+    <a href="https://x.com/BrazilDrex" target="_blank">𝕏</a>
+    <a href="https://instagram.com/brazildrex" target="_blank">📷 Instagram</a>
+  </div>
+
   <footer>
-    © 2025 DREX_BR — Uma nova forma de pensar o valor.
+    © 2025 DREX_BR — Uma nova forma de pensar o valor.<br>
+    Contract: 0xe2e22a0a7Dd81C6E8E6f253BBbc3180697d018d4
   </footer>
+
+  <script>
+    const texts = {
+      pt: {
+        title: "DREX_BR — A Nova Geração da Moeda Digital Brasileira",
+        p1: "O Drex foi uma ideia revolucionária do Banco Central: uma tentativa de aproximar o Brasil da era das moedas digitais, trazendo inovação e conectividade para o sistema financeiro. No entanto, como toda iniciativa estatal, ele nasceu limitado por controles, regulamentações e dependência de instituições tradicionais.",
+        p2: "O DREX_BR resgata essa visão — mas agora da forma como uma criptomoeda deve ser: livre, descentralizada e acessível a todos. Baseado na proposta original do Drex, o DREX_BR não pertence a nenhum governo ou banco. Ele é da comunidade, criado para representar a independência financeira e a valorização real da confiança digital.",
+        h2a: "Oferta Limitada e Crescimento Orgânico",
+        p3: "O total de unidades é limitado a 1.000.000 DREX_BR — e nunca haverá emissão adicional. A valorização é natural e baseada na própria dinâmica de mercado: quanto mais escassa e procurada a moeda, maior seu valor.",
+        h2b: "Por que o DREX_BR?",
+        p4: "Muitos acreditam que o Drex, idealizado pelo Banco Central, não deveria ter sido deixado de lado. O DREX_BR surge exatamente dessa convicção — de que o Brasil merece uma moeda digital de verdade, sem amarras burocráticas, sem intermediários e sem controle centralizado.",
+        p5: "Essa é a oportunidade de reviver o conceito do Drex em sua forma mais pura: uma moeda digital soberana nas mãos do povo, transparente, justa e preparada para o futuro."
+      },
+      en: {
+        title: "DREX_BR — The New Generation of Brazilian Digital Currency",
+        p1: "Drex was a revolutionary idea from the Central Bank: an attempt to bring Brazil closer to the digital currency era, bringing innovation and connectivity to the financial system. However, like every state initiative, it was born limited by regulations and institutional control.",
+        p2: "DREX_BR revives that vision — but now as a cryptocurrency should be: free, decentralized, and accessible to everyone. Based on the original Drex concept, DREX_BR belongs to no government or bank. It is community-driven, representing financial independence and true digital trust.",
+        h2a: "Limited Supply and Organic Growth",
+        p3: "The total supply is capped at 1,000,000 DREX_BR — and there will never be additional issuance. The value naturally increases based on market demand: the scarcer and more desired the coin, the higher its value.",
+        h2b: "Why DREX_BR?",
+        p4: "Many believe that Drex, originally created by Brazil's Central Bank, should not have been abandoned. DREX_BR arises from that conviction — that Brazil deserves a real digital currency, free from bureaucracy, intermediaries, and centralized control.",
+        p5: "This is the chance to revive Drex’s concept in its purest form: a sovereign digital currency in the hands of the people, transparent, fair, and ready for the future."
+      }
+    };
+
+    function setLang(lang) {
+      const t = texts[lang];
+      for (const id in t) document.getElementById(id).innerHTML = t[id];
+      document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en-US';
+    }
+  </script>
 </body>
 </html>
