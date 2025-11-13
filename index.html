@@ -3,21 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DREX_BR</title>
+  <title>DREX_BR - O Novo Conceito de Moeda Digital</title>
   <style>
-    :root {
-      --bg: #0b0c10;
-      --text: #e8e8e8;
-      --accent: #ffb347;
-      --link: #00bcd4;
-    }
     body {
+      background-color: #000;
+      color: #e0e0e0;
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      text-align: center;
+      line-height: 1.6;
       margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      padding: 0 20px;
       overflow-x: hidden;
-      animation: fadeIn 1.5s ease;
     }
     header {
       position: relative;
@@ -27,127 +23,154 @@
     header img {
       width: 100%;
       height: auto;
-      object-fit: cover;
       display: block;
-      transition: transform 8s ease-in-out;
+      object-fit: contain;
     }
-    header img:hover {
-      transform: scale(1.05);
+    .lang-switch {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      z-index: 10;
     }
-    main {
-      padding: 40px 20px;
-      text-align: center;
-      animation: fadeInUp 1s ease;
+    .lang-switch img {
+      width: 32px;
+      height: 22px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      border-radius: 3px;
+    }
+    .lang-switch img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 10px #00d0ff;
     }
     h1 {
-      font-size: 2.5em;
-      color: var(--accent);
+      font-size: 2.4rem;
+      color: #00d0ff;
       margin-bottom: 10px;
+    }
+    h2 {
+      color: #ffaa00;
+      font-size: 1.5rem;
+      margin-top: 40px;
     }
     p {
       max-width: 800px;
-      margin: 0 auto 20px;
-      line-height: 1.6;
-      font-size: 1.1em;
+      margin: 15px auto;
+      font-size: 1.1rem;
+      color: #d8d8d8;
     }
-
     .buy-button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      background: #fcd535;
+      background-color: #fcd535;
       color: #1a1a1a;
       font-weight: bold;
-      border-radius: 30px;
-      padding: 12px 20px;
       text-decoration: none;
+      border-radius: 30px;
+      padding: 12px 24px;
+      margin-top: 20px;
       transition: all 0.3s ease;
-      font-size: 1.1em;
-      box-shadow: 0 0 15px rgba(252, 213, 53, 0.4);
-    }
-    .buy-button img {
-      width: 28px;
-      height: 28px;
-      margin-right: 10px;
+      font-size: 1.1rem;
     }
     .buy-button:hover {
       transform: scale(1.08);
-      box-shadow: 0 0 25px rgba(252, 213, 53, 0.8);
+      box-shadow: 0 0 25px rgba(252, 213, 53, 0.6);
     }
-
     footer {
+      margin-top: 60px;
+      font-size: 0.9rem;
+      color: #888;
+      padding-bottom: 40px;
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
       flex-wrap: wrap;
-      padding: 30px 20px;
-      background: rgba(255, 255, 255, 0.05);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-top: 1px solid #222;
+      padding-top: 30px;
     }
-    footer .links-group {
+    footer div {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 10px;
+      align-items: flex-start;
+      margin: 0 20px;
     }
     footer a {
-      color: var(--link);
+      color: #00bcd4;
       text-decoration: none;
-      transition: color 0.3s;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
+      transition: color 0.3s;
     }
     footer a:hover {
-      color: var(--accent);
+      color: #ffaa00;
     }
-    footer img.icon {
-      width: 18px;
-      height: 18px;
-      vertical-align: middle;
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 30px;
     }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .social-icons a {
+      font-size: 1.6rem;
+      color: #00bcd4;
+      transition: all 0.3s ease;
     }
-    @keyframes fadeInUp {
-      from { transform: translateY(15px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+    .social-icons a:hover {
+      color: #ffaa00;
+      transform: scale(1.2);
     }
   </style>
+  <script src="https://kit.fontawesome.com/a2e0e6ad65.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
   <header>
-    <img src="drexbr.svg" alt="DREX_BR Banner">
+    <div class="lang-switch">
+      <a href="index.html" title="Português"><img src="https://flagcdn.com/w40/br.png" alt="Português"></a>
+      <a href="index-en.html" title="English"><img src="https://flagcdn.com/w40/us.png" alt="English"></a>
+    </div>
+    <img src="new drex.png" alt="Logo DREX_BR">
   </header>
 
-  <main>
-    <h1>DREX_BR</h1>
-    <p>A versão independente da moeda digital brasileira, como ela deveria ter sido criada originalmente — descentralizada, limitada e livre de controle estatal.</p>
+  <h1>DREX_BR — A Nova Geração da Moeda Digital Brasileira</h1>
 
-    <a class="buy-button" href="https://pancakeswap.finance/swap?outputCurrency=0xe2e22a0a7Dd81C6E8E6f253BBbc3180697d018d4" target="_blank" rel="noopener">
-      <img src="https://brazildrex.github.io/drexbr/pancake-icon.png" alt="PancakeSwap"> Comprar na PancakeSwap
-    </a>
-  </main>
+  <p>
+    O Drex foi uma ideia revolucionária do Banco Central: uma tentativa de aproximar o Brasil da era das moedas digitais, 
+    trazendo inovação e conectividade para o sistema financeiro. No entanto, como toda iniciativa estatal, ele nasceu 
+    limitado por controles, regulamentações e dependência de instituições tradicionais.
+  </p>
+
+  <p>
+    O <strong>DREX_BR</strong> resgata essa visão — mas agora da forma como uma criptomoeda deve ser: 
+    <strong>livre, descentralizada e acessível a todos</strong>.  
+    Baseado na proposta original do Drex, o DREX_BR não pertence a nenhum governo ou banco. Ele é da comunidade, 
+    criado para representar a independência financeira e a valorização real da confiança digital.
+  </p>
+
+  <a class="buy-button" href="https://pancakeswap.finance/swap?outputCurrency=0xe2e22a0a7Dd81C6E8E6f253BBbc3180697d018d4" target="_blank" rel="noopener">
+    🥞 Comprar na PancakeSwap
+  </a>
+
+  <div class="social-icons">
+    <a href="https://x.com/DREX_BR" target="_blank" title="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="https://t.me/DREX_BR" target="_blank" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
+  </div>
 
   <footer>
-    <div class="links-group">
-      <a href="https://bscscan.com/token/0xe2e22a0a7Dd81C6E8E6f253BBbc3180697d018d4" target="_blank" rel="noopener">
-        <img class="icon" src="https://brazildrex.github.io/drexbr/bscscan-icon.png" alt="BscScan"> Contrato na BscScan
-      </a>
-      <a href="https://t.me/DREX_BR" target="_blank" rel="noopener">
-        <img class="icon" src="https://brazildrex.github.io/drexbr/telegram-icon.png" alt="Telegram"> Canal no Telegram
-      </a>
-      <a href="https://github.com/brazildrex" target="_blank" rel="noopener">
-        <img class="icon" src="https://brazildrex.github.io/drexbr/github-icon.png" alt="GitHub"> Código no GitHub
-      </a>
+    <div>
+      <a href="https://bscscan.com/token/0xe2e22a0a7Dd81C6E8E6f253BBbc3180697d018d4" target="_blank">🔗 Contrato na BscScan</a>
+      <a href="https://www.bcb.gov.br/estabilidadefinanceira/drex" target="_blank">🏦 DREX Original (Banco Central)</a>
     </div>
-
-    <div class="links-group">
-      <a href="first-tx.md" target="_blank" rel="noopener">Primeira Transação</a>
-      <a href="token-launch.md" target="_blank" rel="noopener">Lançamento</a>
-      <a href="info.md" target="_blank" rel="noopener">Informações do Token</a>
+    <div>
+      <a href="primeira-transacao.md" target="_blank">📜 Primeira Transação</a>
+      <a href="lancamento.md" target="_blank">🚀 Lançamento</a>
+      <a href="informacoes.md" target="_blank">ℹ️ Informações do Token</a>
     </div>
   </footer>
+
 </body>
 </html>
