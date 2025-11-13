@@ -3,203 +3,151 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DREX_BR - A Nova Geração da Moeda Digital Brasileira</title>
+  <title>DREX_BR</title>
   <style>
     :root {
-      --primary: #00d0ff;
-      --secondary: #ffaa00;
-      --bg: #000;
-      --text: #e0e0e0;
-      --muted: #999;
+      --bg: #0b0c10;
+      --text: #e8e8e8;
+      --accent: #ffb347;
+      --link: #00bcd4;
     }
     body {
       margin: 0;
-      background-color: var(--bg);
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
       color: var(--text);
-      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      text-align: center;
-      line-height: 1.6;
       overflow-x: hidden;
-      animation: fadeIn 1s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
+      animation: fadeIn 1.5s ease;
     }
     header {
       position: relative;
+      width: 100%;
+      overflow: hidden;
     }
     header img {
       width: 100%;
       height: auto;
       object-fit: cover;
-      max-height: 420px;
+      display: block;
+      transition: transform 8s ease-in-out;
     }
-    .flags {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      display: flex;
-      gap: 10px;
-      z-index: 10;
+    header img:hover {
+      transform: scale(1.05);
     }
-    .flags img {
-      width: 32px;
-      height: 22px;
-      border-radius: 3px;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-    .flags img:hover {
-      transform: scale(1.1);
+    main {
+      padding: 40px 20px;
+      text-align: center;
+      animation: fadeInUp 1s ease;
     }
     h1 {
-      font-size: 2.4rem;
-      color: var(--primary);
-      margin: 20px 0 10px;
-    }
-    h2 {
-      color: var(--secondary);
-      font-size: 1.6rem;
-      margin-top: 40px;
+      font-size: 2.5em;
+      color: var(--accent);
+      margin-bottom: 10px;
     }
     p {
       max-width: 800px;
-      margin: 15px auto;
-      font-size: 1.1rem;
-      color: #d8d8d8;
+      margin: 0 auto 20px;
+      line-height: 1.6;
+      font-size: 1.1em;
     }
-    a {
-      color: var(--primary);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    a:hover {
-      color: var(--secondary);
-    }
-    .buy-link {
+
+    .buy-button {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      background: rgba(0, 208, 255, 0.1);
-      border: 1px solid var(--primary);
-      border-radius: 50px;
-      padding: 10px 25px;
-      margin: 20px 0 40px;
+      justify-content: center;
+      background: #fcd535;
+      color: #1a1a1a;
+      font-weight: bold;
+      border-radius: 30px;
+      padding: 12px 20px;
+      text-decoration: none;
       transition: all 0.3s ease;
+      font-size: 1.1em;
+      box-shadow: 0 0 15px rgba(252, 213, 53, 0.4);
     }
-    .buy-link img {
+    .buy-button img {
       width: 28px;
       height: 28px;
+      margin-right: 10px;
     }
-    .buy-link:hover {
-      background: var(--primary);
-      color: #000;
-      transform: scale(1.05);
+    .buy-button:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 25px rgba(252, 213, 53, 0.8);
     }
+
     footer {
-      margin-top: 60px;
-      padding: 20px;
-      font-size: 0.95rem;
-      color: var(--muted);
       display: flex;
       justify-content: space-between;
+      align-items: flex-start;
       flex-wrap: wrap;
-      border-top: 1px solid #222;
+      padding: 30px 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
-    .footer-left, .footer-right {
+    footer .links-group {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      margin: 10px 20px;
-    }
-    .footer-right {
-      align-items: flex-end;
+      gap: 8px;
     }
     footer a {
-      color: #d8d8d8;
-      margin: 4px 0;
+      color: var(--link);
+      text-decoration: none;
+      transition: color 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
     footer a:hover {
-      color: var(--secondary);
+      color: var(--accent);
+    }
+    footer img.icon {
+      width: 18px;
+      height: 18px;
+      vertical-align: middle;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { transform: translateY(15px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
   </style>
 </head>
 <body>
-
   <header>
-    <div class="flags">
-      <img src="https://flagcdn.com/w40/br.png" alt="Português" onclick="setLanguage('pt')">
-      <img src="https://flagcdn.com/w40/us.png" alt="English" onclick="setLanguage('en')">
-    </div>
-    <img src="new drex.png" alt="Banner DREX_BR">
+    <img src="drexbr.svg" alt="DREX_BR Banner">
   </header>
 
-  <main id="content">
-    <h1>DREX_BR — A Nova Geração da Moeda Digital Brasileira</h1>
+  <main>
+    <h1>DREX_BR</h1>
+    <p>A versão independente da moeda digital brasileira, como ela deveria ter sido criada originalmente — descentralizada, limitada e livre de controle estatal.</p>
 
-    <p>O Drex foi uma ideia revolucionária do Banco Central: uma tentativa de aproximar o Brasil da era das moedas digitais, trazendo inovação e conectividade para o sistema financeiro. No entanto, como toda iniciativa estatal, ele nasceu limitado por controles, regulamentações e dependência de instituições tradicionais.</p>
-
-    <p>O <strong>DREX_BR</strong> resgata essa visão — mas agora da forma como uma criptomoeda deve ser: <strong>livre, descentralizada e acessível a todos</strong>. Baseado na proposta original do Drex, o DREX_BR não pertence a nenhum governo ou banco. Ele é da comunidade, criado para representar a independência financeira e a valorização real da confiança digital.</p>
-
-    <a class="buy-link" href="https://pancakeswap.finance/swap?outputCurrency=0xe2e22a0a7Dd81C6E8E6f253BBbc3180697d018d4" target="_blank">
-      <img src="https://cryptologos.cc/logos/pancakeswap-cake-logo.svg" alt="PancakeSwap">
-      Compre na PancakeSwap
+    <a class="buy-button" href="https://pancakeswap.finance/swap?outputCurrency=0xe2e22a0a7Dd81C6E8E6f253BBbc3180697d018d4" target="_blank" rel="noopener">
+      <img src="https://brazildrex.github.io/drexbr/pancake-icon.png" alt="PancakeSwap"> Comprar na PancakeSwap
     </a>
-
-    <h2>Oferta Limitada e Crescimento Orgânico</h2>
-
-    <p>O total de unidades é limitado a <strong>1 bilhão de DREX_BR</strong> — e nunca haverá emissão adicional. Até a metade das unidades ser vendida, o preço permanecerá abaixo de <strong>R$ 1,00</strong>, incentivando a entrada de novos participantes e apoiadores do projeto.</p>
-
-    <p>À medida que a oferta diminui e a inflação corrói o poder de compra do Real, o valor do DREX_BR tende naturalmente a subir. Isso cria um modelo justo, transparente e com base na própria lógica do mercado: quanto mais escassa e procurada a moeda, maior seu valor.</p>
-
-    <h2>Por que o DREX_BR?</h2>
-
-    <p>Muitos acreditam que o Drex, idealizado pelo Banco Central, não deveria ter sido deixado de lado. O DREX_BR surge exatamente dessa convicção — de que o Brasil merece uma moeda digital de verdade, sem amarras burocráticas, sem intermediários, e sem o controle centralizado que limita a liberdade financeira.</p>
-
-    <p>Essa é a oportunidade de reviver o conceito do Drex em sua forma mais pura: uma moeda digital soberana nas mãos do povo, transparente, justa e preparada para o futuro.</p>
   </main>
 
   <footer>
-    <div class="footer-left">
-      <a href="https://bscscan.com/token/0xe2e22a0a7Dd81C6E8E6f253BBbc3180697d018d4" target="_blank">Contrato na BscScan</a>
-      <a href="https://t.me/DREX_BR" target="_blank">Canal no Telegram</a>
-      <a href="https://x.com/BrazilDrex" target="_blank">Perfil no X</a>
+    <div class="links-group">
+      <a href="https://bscscan.com/token/0xe2e22a0a7Dd81C6E8E6f253BBbc3180697d018d4" target="_blank" rel="noopener">
+        <img class="icon" src="https://brazildrex.github.io/drexbr/bscscan-icon.png" alt="BscScan"> Contrato na BscScan
+      </a>
+      <a href="https://t.me/DREX_BR" target="_blank" rel="noopener">
+        <img class="icon" src="https://brazildrex.github.io/drexbr/telegram-icon.png" alt="Telegram"> Canal no Telegram
+      </a>
+      <a href="https://github.com/brazildrex" target="_blank" rel="noopener">
+        <img class="icon" src="https://brazildrex.github.io/drexbr/github-icon.png" alt="GitHub"> Código no GitHub
+      </a>
     </div>
-    <div class="footer-right">
-      <a href="https://www.bcb.gov.br/estabilidadefinanceira/drex" target="_blank">DREX original - Banco Central</a>
-      <a href="token-launch.md" target="_blank">token-launch.md</a>
-      <a href="first-tx.md" target="_blank">first-tx.md</a>
-      <a href="announcement.md" target="_blank">announcement.md</a>
+
+    <div class="links-group">
+      <a href="first-tx.md" target="_blank" rel="noopener">Primeira Transação</a>
+      <a href="token-launch.md" target="_blank" rel="noopener">Lançamento</a>
+      <a href="info.md" target="_blank" rel="noopener">Informações do Token</a>
     </div>
   </footer>
-
-  <script>
-    function setLanguage(lang) {
-      const content = document.getElementById('content');
-      if (lang === 'en') {
-        document.documentElement.lang = 'en';
-        document.title = 'DREX_BR - The New Generation of Brazilian Digital Currency';
-        content.innerHTML = `
-          <h1>DREX_BR — The New Generation of Brazilian Digital Currency</h1>
-          <p>The original Drex was a revolutionary idea from Brazil’s Central Bank — an attempt to bring the country closer to the digital currency era. However, as with every state initiative, it was limited by regulations, control, and dependence on traditional institutions.</p>
-          <p><strong>DREX_BR</strong> revives that vision — but now as a cryptocurrency should be: <strong>free, decentralized, and accessible to everyone</strong>. Based on Drex’s original proposal, DREX_BR belongs to no government or bank. It belongs to the community, created to represent financial independence and real digital trust.</p>
-          <a class="buy-link" href="https://pancakeswap.finance/swap?outputCurrency=0xe2e22a0a7Dd81C6E8E6f253BBbc3180697d018d4" target="_blank">
-            <img src="https://cryptologos.cc/logos/pancakeswap-cake-logo.svg" alt="PancakeSwap">
-            Buy on PancakeSwap
-          </a>
-          <h2>Limited Supply and Organic Growth</h2>
-          <p>Total supply is limited to <strong>1 billion DREX_BR</strong> — with no future minting. Until half of the supply is sold, the price remains below <strong>R$ 1.00</strong>, encouraging new adopters to join the movement.</p>
-          <p>As supply decreases and inflation erodes the Real’s purchasing power, DREX_BR naturally tends to rise in value — a fair, transparent model based on true market logic: the scarcer and more demanded the coin, the greater its worth.</p>
-          <h2>Why DREX_BR?</h2>
-          <p>Many believe that the Central Bank’s Drex should never have been abandoned. DREX_BR emerges from that conviction — that Brazil deserves a true digital currency, free from bureaucracy, intermediaries, and centralized control.</p>
-          <p>This is the opportunity to revive Drex’s concept in its purest form: a digital currency owned by the people — transparent, fair, and ready for the future.</p>
-        `;
-      } else {
-        location.reload();
-      }
-    }
-  </script>
-
 </body>
 </html>
